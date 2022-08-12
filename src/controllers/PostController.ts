@@ -17,6 +17,16 @@ class PostController {
         }
     }
 
+    async show(req: Request, res: Response) {
+        try {
+            let id = req.params.id;
+            let post = await this.PostService.findAllByUser(id);
+            return res.status(200).json(post)
+        } catch (error) {
+            console.log(error);
+            res.json(error);
+        }
+    }
     async create(req: Request,res: Response) {
         try {
             let {text,userId,status} = req.body;

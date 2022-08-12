@@ -34,6 +34,11 @@ class PostRepository {
         let result = await PostModel.findById(filter);
         return result
     }
+
+    async find(filter: any) {
+        let result = await PostModel.find(filter);
+        return result
+    }
 }
 
 export default new PostRepository()

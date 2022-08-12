@@ -9,6 +9,7 @@ import PostController from '../controllers/PostController';
 import PostValidation from '../helper/PostValidation';
 
 // router.post('/post',validate(PostValidation),PostController.create.bind(PostController))
+router.get('/post/user/:id', PostController.show.bind(PostController));
 router.get('/post/:id', PostController.find.bind(PostController))
 
 router.route('/post')

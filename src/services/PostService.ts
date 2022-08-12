@@ -13,6 +13,11 @@ class PostService {
             throw Error(`${error}`)
         }
     }
+    async findAllByUser (id:string) {
+        let posts = await PostRepository.find({userId:id});
+
+        return posts
+    }
     async findOne( id: string) {
         let post = await PostRepository.findById(id);
         return post
